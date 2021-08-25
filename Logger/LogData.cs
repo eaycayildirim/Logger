@@ -16,12 +16,17 @@ namespace Logger
             this._dataList = new List<string>();
         }
 
-        public List<string> GetLogdata()
+        public List<string> GetLogData()
         {
-            _dataList.Add(_info.GetStatus() +": "+ _info.GetMessage());
-            _dataList.Add(_warning.GetStatus() +": "+ _warning.GetMessage());
-            _dataList.Add(_error.GetStatus() +": "+ _error.GetMessage());
+            _dataList.Add(GetLogLevelData(_info));
+            _dataList.Add(GetLogLevelData(_warning));
+            _dataList.Add(GetLogLevelData(_error));
             return _dataList;
+        }
+
+        private string GetLogLevelData(ILogLevel logLevel)
+        {
+            return logLevel.GetStatus() + ": " + logLevel.GetMessage();
         }
 
         private ILogLevel _info;

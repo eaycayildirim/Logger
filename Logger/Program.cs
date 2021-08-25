@@ -12,7 +12,7 @@ namespace Logger
         {
             LogData data = new LogData();
             Log log = new Log();
-            log.WriteLog(data.GetLogdata());
+            log.WriteLog(data.GetLogData());
         }
     }
 }
