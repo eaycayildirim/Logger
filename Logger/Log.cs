@@ -11,12 +11,7 @@ namespace Logger
     {
         public Log()
         {
-            this._filePath = "Logger.txt";
-        }
-
-        public Log(string filePath)
-        {
-            this._filePath = filePath;
+            this._filePath = GetFilePath();
         }
 
         public void WriteLog(List<string> list)
@@ -31,6 +26,11 @@ namespace Logger
         {
             string log = ("[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + data);
             File.AppendAllText(_filePath, log);
+        }
+
+        private string GetFilePath()
+        {
+            return DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
         }
 
         private string _filePath;
