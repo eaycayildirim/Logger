@@ -5,30 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Logger
+namespace nsLog
 {
-    class Log
+    public class Log
     {
         public Log()
         {
             this._filePath = GetFilePath();
         }
 
+        public Log(string filePath)
+        {
+            this._filePath = filePath;
+        }
+
         public void WriteLog(List<string> list)
         {
             foreach (var item in list)
             {
-                WriteLine(item+"\n");
+                WriteLine(item + "\n");
             }
         }
 
-        private void WriteLine(string data)
+        public void WriteLine(string data)
         {
             string log = ("[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + data);
             File.AppendAllText(_filePath, log);
         }
 
-        private string GetFilePath()
+        public string GetFilePath()
         {
             return DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
         }
