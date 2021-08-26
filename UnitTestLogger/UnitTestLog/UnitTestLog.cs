@@ -32,7 +32,7 @@ namespace UnitTestLogger
         }
 
         [TestMethod]
-        public void WriteLog_WriteOneLine()
+        public void WriteLog_WriteList()
         {
             //Given
             _database.RemoveFile();
