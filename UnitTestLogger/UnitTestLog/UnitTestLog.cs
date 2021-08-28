@@ -11,19 +11,19 @@ namespace UnitTestLogger
     {
         public UnitTestLog()
         {
-            this._database = new LogTest(_filePath);
+            this._log = new LogTest(_filePath, "dd/MM/yyyy HH:mm:ss");
         }
 
         [TestMethod]
-        public void WriteLine_WriteOneLine()
+        public void Write_WriteOneLine()
         {
             //Given
-            _database.RemoveFile();
+            _log.RemoveFile();
             var data = "Line";
-            var expected = ("[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + data);
+            var expected = ("[dd/MM/yyyy HH:mm:ss]: " + data);
 
             //When
-            _database.WriteLine(data);
+            _log.Write(data);
             var actual = File.ReadAllText(_filePath);
 
             //Then
@@ -32,16 +32,15 @@ namespace UnitTestLogger
         }
 
         [TestMethod]
-        public void WriteLog_WriteList()
+        public void Write_WriteList()
         {
             //Given
-            _database.RemoveFile();
+            _log.RemoveFile();
             List<string> input = new List<string> { "Line1", "Line2"};
-            var expected = "[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + input[0] + "\n" +
-                "[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + input[1] + "\n";
+            var expected = "[dd/MM/yyyy HH:mm:ss]: " + input[0] + "\n" + "[dd/MM/yyyy HH:mm:ss]: " + input[1] + "\n";
 
             //When
-            _database.WriteLog(input);
+            _log.Write(input);
             var actual = File.ReadAllText(_filePath);
 
             //Then
@@ -53,16 +52,16 @@ namespace UnitTestLogger
         public void GetFilePath()
         {
             //Given
-            var expected = DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
+            var expected = _filePath;
 
             //When
-            var actual = _database.GetFilePath();
+            var actual = _log.GetFileName();
 
             //Then
             Assert.AreEqual(expected, actual);
         }
 
-        private LogTest _database;
-        private string _filePath = "Test.txt";
+        private LogTest _log;
+        private string _filePath = "Test.log";
     }
 }

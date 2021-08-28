@@ -8,7 +8,7 @@ namespace nsLog
     {
         public Log()
         {
-            this._filePath = GetFilePath();
+            this._filePath = DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
         }
 
         public Log(string filePath)
@@ -16,23 +16,30 @@ namespace nsLog
             this._filePath = filePath;
         }
 
-        public void WriteLog(List<string> list)
+        public void Write(List<string> list)
         {
             foreach (var item in list)
             {
-                WriteLine(item + "\n");
+                Write(item + "\n");
             }
         }
 
-        public void WriteLine(string data)
+        public void Write(string data)
         {
-            string log = ("[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + data);
+            string log = ("[" + GetCurrentDateTime() + "]: " + data);
             File.AppendAllText(_filePath, log);
         }
 
-        public string GetFilePath()
+        public string GetFileName()
         {
-            return DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
+            return _filePath;
+        }
+
+        //For Testing
+
+        virtual protected string GetCurrentDateTime()
+        {
+            return DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private string _filePath;

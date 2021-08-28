@@ -10,7 +10,7 @@ namespace nsLogTest
 {
     public class LogTest : Log
     {
-        public LogTest(string filePath) : base(filePath)
+        public LogTest(string filePath, string dateTime) : base(filePath)
         {
             this._filePath = filePath;
         }
@@ -24,6 +24,11 @@ namespace nsLogTest
         public void RemoveFile()
         {
             File.Delete(_filePath);
+        }
+
+        override protected string GetCurrentDateTime()
+        {
+            return "dd/MM/yyyy HH:mm:ss";
         }
 
         private string _filePath;

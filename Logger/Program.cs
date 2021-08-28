@@ -14,7 +14,7 @@ namespace nsLoggerMain
         {
             LogData data = new LogData();
             Log log = new Log();
-            log.WriteLog(data.GetLogData());
+            log.Write(data.GetLogData());
         }
     }
 }
