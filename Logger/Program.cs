@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using nsLog;
+using nsLogData;
 
-namespace Logger
+namespace nsLoggerMain
 {
     class Program
     {
@@ -12,7 +14,7 @@ namespace Logger
         {
             LogData data = new LogData();
             Log log = new Log();
-            log.WriteLog(data.GetLogData());
+            log.Write(data.GetLogData());
         }
     }
 }

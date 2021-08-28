@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
-namespace Logger
+namespace nsLog
 {
-    class Log
+    public class Log
     {
         public Log()
         {
-            this._filePath = "Logger.txt";
+            this._filePath = DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
         }
 
         public Log(string filePath)
@@ -19,18 +16,30 @@ namespace Logger
             this._filePath = filePath;
         }
 
-        public void WriteLog(List<string> list)
+        public void Write(List<string> list)
         {
             foreach (var item in list)
             {
-                WriteLine(item+"\n");
+                Write(item + "\n");
             }
         }
 
-        private void WriteLine(string data)
+        public void Write(string data)
         {
-            string log = ("[" + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + data);
+            string log = ("[" + GetCurrentDateTime() + "]: " + data);
             File.AppendAllText(_filePath, log);
+        }
+
+        public string GetFileName()
+        {
+            return _filePath;
+        }
+
+        //For Testing
+
+        virtual protected string GetCurrentDateTime()
+        {
+            return DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private string _filePath;
