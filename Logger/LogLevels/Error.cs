@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace nsILogLevel
 {
-    class Error : ILogLevel
+    public class Error : ILogLevel
     {
-        public string GetStatus()
+        public Error()
         {
-            return "Error";
+            this.Name = "Error";
         }
 
         public string GetMessage()
         {
             return "This is an error message";
         }
+
+        public string Name { get; }
     }
 }

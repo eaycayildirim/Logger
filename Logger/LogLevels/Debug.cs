@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace nsILogLevel
 {
-    public class Info : ILogLevel
+    public class Debug : ILogLevel
     {
-        public Info()
+        public Debug()
         {
-            this.Name = "Info";
+            this.Name = "Debug";
         }
+
         public string GetMessage()
         {
-            return "This is an info message";
+            return "This is an debug message";
         }
 
         public string Name { get; }

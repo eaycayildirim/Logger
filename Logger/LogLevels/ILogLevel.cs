@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace nsILogLevel
 {
-    interface ILogLevel
+    public interface ILogLevel
     {
-        string GetStatus();
+        string Name { get; }
 
         string GetMessage();
     }

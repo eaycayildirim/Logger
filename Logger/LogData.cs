@@ -4,32 +4,18 @@ using nsILogLevel;
 
 namespace nsLogData
 {
-    class LogData
+    public class LogData
     {
-        public LogData()
+        public string GetLog(ILogLevel logLevel)
         {
-            this._info = new Info();
-            this._warning = new Warning();
-            this._error = new Error();
-            this._dataList = new List<string>();
+            return "[" + logLevel.Name + " " + GetCurrentDateTime() + "]: " + logLevel.GetMessage();
         }
 
-        public List<string> GetLogData()
-        {
-            _dataList.Add(GetLogLevelData(_info));
-            _dataList.Add(GetLogLevelData(_warning));
-            _dataList.Add(GetLogLevelData(_error));
-            return _dataList;
-        }
+        //For Testing
 
-        private string GetLogLevelData(ILogLevel logLevel)
+        virtual protected string GetCurrentDateTime()
         {
-            return logLevel.GetStatus() + ": " + logLevel.GetMessage();
+            return DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
-
-        private ILogLevel _info;
-        private ILogLevel _warning;
-        private ILogLevel _error;
-        private List<string> _dataList;
     }
 }

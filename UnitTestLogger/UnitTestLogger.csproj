@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestLogData\LogDataTest.cs" />
+    <Compile Include="UnitTestLogData\UnitTestLogData.cs" />
     <Compile Include="UnitTestLog\UnitTestLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestLog\LogTest.cs" />

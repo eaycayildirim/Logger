@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace nsILogLevel
 {
-    class Warning : ILogLevel
+    public class Critical : ILogLevel
     {
-        public string GetStatus()
+        public Critical()
         {
-            return "Warning";
+            this.Name = "Critical";
         }
+
         public string GetMessage()
         {
-            return "This is a warning message";
+            return "This is a critical message";
         }
+
+        public string Name { get; }
     }
 }
