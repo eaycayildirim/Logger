@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using nsILogLevel;
 
 namespace nsLogData
 {
     public class LogData
     {
-        public string GetLog(ILogLevel logLevel)
+        public string GetLogData(ILogLevel logLevel)
         {
             return "[" + logLevel.Name + " " + GetCurrentDateTime() + "]: " + logLevel.GetMessage();
         }

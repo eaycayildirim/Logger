@@ -1,7 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.IO;
-using System.Collections.Generic;
 using nsILogLevel;
 
 namespace UnitTestLogger
@@ -21,7 +18,7 @@ namespace UnitTestLogger
             var expected = "[Error dd/MM/yyyy HH:mm:ss]: This is an error message";
 
             //When
-            var actual = logData.GetLog(new Error());
+            var actual = logData.GetLogData(new Error());
 
             //Then
             Assert.AreEqual(expected, actual);

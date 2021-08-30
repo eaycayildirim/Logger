@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.IO;
-using System.Collections.Generic;
 using nsLogTest;
 
 namespace UnitTestLogger
@@ -29,23 +27,6 @@ namespace UnitTestLogger
             Assert.IsTrue(File.Exists(_filePath));
             Assert.AreEqual(expected, actual);
         }
-
-        //[TestMethod]
-        //public void Write_WriteList()
-        //{
-        //    //Given
-        //    _log.RemoveFile();
-        //    List<string> input = new List<string> { "Line1", "Line2"};
-        //    var expected = "[dd/MM/yyyy HH:mm:ss]: " + input[0] + "\n" + "[dd/MM/yyyy HH:mm:ss]: " + input[1] + "\n";
-
-        //    //When
-        //    _log.Write(input);
-        //    var actual = File.ReadAllText(_filePath);
-
-        //    //Then
-        //    Assert.IsTrue(File.Exists(_filePath));
-        //    Assert.AreEqual(expected, actual);
-        //}
 
         [TestMethod]
         public void GetFilePath()
