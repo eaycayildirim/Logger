@@ -11,12 +11,10 @@ namespace nsILogLevel
         public Info()
         {
             this.Name = "Info";
-        }
-        public string GetMessage()
-        {
-            return "This is an info message";
+            this.Message = "This is an info message";
         }
 
         public string Name { get; }
+        public string Message { get; }
     }
 }

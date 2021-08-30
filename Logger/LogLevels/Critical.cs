@@ -11,13 +11,10 @@ namespace nsILogLevel
         public Critical()
         {
             this.Name = "Critical";
-        }
-
-        public string GetMessage()
-        {
-            return "This is a critical message";
+            this.Message = "This is a critical message";
         }
 
         public string Name { get; }
+        public string Message { get; }
     }
 }

@@ -11,13 +11,10 @@ namespace nsILogLevel
         public Error()
         {
             this.Name = "Error";
-        }
-
-        public string GetMessage()
-        {
-            return "This is an error message";
+            this.Message = "This is an error message";
         }
 
         public string Name { get; }
+        public string Message { get; }
     }
 }

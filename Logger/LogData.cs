@@ -7,11 +7,10 @@ namespace nsLogData
     {
         public string GetLogData(ILogLevel logLevel)
         {
-            return "[" + logLevel.Name + " " + GetCurrentDateTime() + "]: " + logLevel.GetMessage();
+            return "[" + logLevel.Name + " " + GetCurrentDateTime() + "]: " + logLevel.Message;
         }
 
         //For Testing
-
         virtual protected string GetCurrentDateTime()
         {
             return DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");

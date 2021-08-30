@@ -11,13 +11,10 @@ namespace nsILogLevel
         public Debug()
         {
             this.Name = "Debug";
-        }
-
-        public string GetMessage()
-        {
-            return "This is an debug message";
+            this.Message = "This is an debug message";
         }
 
         public string Name { get; }
+        public string Message { get; }
     }
 }

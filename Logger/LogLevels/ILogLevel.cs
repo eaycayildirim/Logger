@@ -10,6 +10,6 @@ namespace nsILogLevel
     {
         string Name { get; }
 
-        string GetMessage();
+        string Message { get; }
     }
 }
