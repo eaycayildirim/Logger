@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using nsLog;
 
 namespace nsILogLevel
 {
@@ -11,10 +8,15 @@ namespace nsILogLevel
         public Critical()
         {
             this.Name = "Critical";
-            this.Message = "This is a critical message";
+        }
+
+        public void Write(string message)
+        {
+            Log log = new Log();
+            var data = "[" + Name + " " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + message;
+            log.Write(data);
         }
 
         public string Name { get; }
-        public string Message { get; }
     }
 }

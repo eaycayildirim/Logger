@@ -1,6 +1,4 @@
-﻿using nsLog;
-using nsLogData;
-using nsILogLevel;
+﻿using nsILogLevel;
 
 namespace nsLoggerMain
 {
@@ -8,10 +6,8 @@ namespace nsLoggerMain
     {
         static void Main(string[] args)
         {
-            LogData data = new LogData();
-            Log log = new Log();
-
-            log.Write(data.GetLogData(new Info()));
+            ILogLevel logCritical = new Critical();
+            logCritical.Write("Critical");
         }
     }
 }

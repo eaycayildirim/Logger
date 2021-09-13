@@ -7,7 +7,8 @@ namespace nsLog
     {
         public Log()
         {
-            this._filePath = DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
+            Directory.CreateDirectory("Log/");
+            this._filePath = "Log/" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".log";
         }
 
         public Log(string filePath)

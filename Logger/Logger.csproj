@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogData.cs" />
     <Compile Include="LogLevels\Debug.cs" />
     <Compile Include="LogLevels\Error.cs" />
     <Compile Include="LogLevels\Info.cs" />
