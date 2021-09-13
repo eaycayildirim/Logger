@@ -1,22 +1,12 @@
 ﻿using System;
-using nsLog;
 
-namespace nsILogLevel
+namespace nsLogLevel
 {
-    public class Info : ILogLevel
+    public class Info : LogLevel
     {
         public Info()
         {
             this.Name = "Info";
         }
-
-        public void Write(string message)
-        {
-            Log log = new Log();
-            var data = "[" + Name + " " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + "]: " + message;
-            log.Write(data);
-        }
-
-        public string Name { get; }
     }
 }

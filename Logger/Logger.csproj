@@ -48,6 +48,7 @@
     <Compile Include="LogLevels\Info.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogLevels\ILogLevel.cs" />
+    <Compile Include="LogLevels\LogLevel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogLevels\Critical.cs" />

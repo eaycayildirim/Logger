@@ -1,4 +1,4 @@
-﻿using nsILogLevel;
+﻿using nsLogLevel;
 
 namespace nsLoggerMain
 {
@@ -6,7 +6,7 @@ namespace nsLoggerMain
     {
         static void Main(string[] args)
         {
-            ILogLevel logCritical = new Critical();
+            LogLevel logCritical = new Critical();
             logCritical.Write("Critical");
         }
     }
