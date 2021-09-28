@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace nsILogLevel
+namespace nsLogLevel
 {
-    class Info : ILogLevel
+    public class Info : LogLevel
     {
-        public string GetStatus()
+        public Info()
         {
-            return "Info";
-        }
-        public string GetMessage()
-        {
-            return "This is an info message";
+            this.Name = "Info";
         }
     }
 }

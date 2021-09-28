@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace nsILogLevel
+namespace nsLogLevel
 {
-    class Error : ILogLevel
+    public class Error : LogLevel
     {
-        public string GetStatus()
+        public Error()
         {
-            return "Error";
-        }
-
-        public string GetMessage()
-        {
-            return "This is an error message";
+            this.Name = "Error";
         }
     }
 }
